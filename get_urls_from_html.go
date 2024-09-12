@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"net/url"
 	"strings"
 
@@ -39,8 +38,5 @@ func getURLsFromHTML(htmlBody, rawBaseURL string) ([]string, error) {
 		}
 	}
 	walkNodes(parsedHtml)
-	if len(urls) == 0 {
-		return nil, fmt.Errorf("no URL found: %s", rawBaseURL)
-	}
 	return urls, nil
 }
